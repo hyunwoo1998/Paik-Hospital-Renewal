@@ -1,0 +1,138 @@
+@charset "utf-8";
+@import "common";
+
+.footer {
+    background: $light-gray;
+
+    &__top {
+        border-bottom: 1px solid $dark-gray;
+
+        .container {
+            @extend %flex;
+            justify-content: space-between;
+
+            @include mobile-sm {
+                padding: 0;
+            }
+        }
+    }
+
+    &__sns {
+        @extend %flex;
+
+        @include mobile-sm {
+            display: none;
+        }
+
+        &-itm {
+            margin-left: 10px;
+        }
+
+        &-link {
+            display: block;
+        }
+    }
+
+    &__site {
+        position: relative;
+        margin-left: 20px;
+
+        @include mobile-sm {
+            width: 100%;
+            margin-left: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &-btn {
+            position: relative;
+            padding: 12px 52px 12px 32px;
+            border: 1px solid $dark-gray;
+            background: $dark-gray;
+            color: $main-white;
+            font-size: $font-16;
+
+            &::after {
+                position: absolute;
+                top: 20px;
+                right: 24px;
+                width: 10px;
+                height: 10px;
+                border-top: 2px solid $main-white;
+                border-right: 2px solid $main-white;
+                transform: rotate(-45deg);
+                content: "";
+            }
+
+            @include mobile-sm {
+                width: 100%;
+            }
+        }
+
+        &-open::after {
+            top: 16px;
+            transform: rotate(135deg);
+        }
+
+        &-list {
+            position: absolute;
+            display: none;
+            bottom: 100%;
+            width: 100%;
+            border: 1px solid $dark-gray;
+            border-bottom: 0;
+            background: $main-white;
+            height: 200px;
+            overflow-y: auto;
+        }
+
+        &-link {
+            font-size: $font-16;
+            display: block;
+            padding: 8px 0 8px 32px;
+
+            &:hover {
+                background: $main-blue;
+                color: $main-white;
+            }
+        }
+
+    }
+
+    &__bot {
+        padding: 20px 0;
+    }
+
+    &__fnb {
+        @extend %flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+
+        &-itm {
+            position: relative;
+            padding-right: 10px;
+            margin-right: 10px;
+
+            &:nth-child(n+2)::after {
+                position: absolute;
+                left: -10px;
+                @extend %y-center;
+                width: 1px;
+                height: 12px;
+                background: $main-dark;
+                content: '';
+            }
+        }
+
+        &-link {
+            display: block;
+            font-size: $font-16;
+        }
+    }
+
+    &__copy {
+        text-align: center;
+        font-size: $font-16;
+    }
+}

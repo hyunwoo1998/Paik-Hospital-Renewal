@@ -1,0 +1,162 @@
+@charset "utf-8";
+@import "reset";
+
+/* Font List */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* Variables */
+// Font Size
+$font-12: 1.2rem;
+$font-14: 1.4rem;
+$font-16: 1.6rem;
+$font-18: 1.8rem;
+$font-24: 2.4rem;
+$font-36: 3.6rem;
+$font-48: 4.8rem;
+
+// Font Weight
+$font-b: 900;
+
+// Color
+$main-blue: #2a629d;
+$main-dark: #000;
+$dark-gray: #74777a;
+$light-gray: #ced2d6;
+$main-white: #fff;
+
+// Responsive Size
+$desktop: 1400px;
+$laptop: 1200px;
+$tablet: 992px;
+$mobile-lg: 768px;
+$mobile-sm: 576px;
+
+
+/* Mixin */
+// Responsive Mixin
+@mixin desktop {
+    @media (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (max-width: $laptop) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile-lg {
+    @media (max-width: $mobile-lg) {
+        @content;
+    }
+}
+
+@mixin mobile-sm {
+    @media (max-width: $mobile-sm) {
+        @content;
+    }
+}
+
+// ETC Mixin
+@mixin width($max-width: 1320px) {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@mixin border-blue {
+    border-top: 3px solid $main-blue;
+    border-right: 1px solid $light-gray;
+    border-bottom: 3px solid $main-blue;
+    border-left: 1px solid $light-gray;
+}
+
+@mixin border-gray {
+    border-top: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
+}
+
+
+/* Extend */
+%flex {
+    display: flex;
+    align-items: center;
+}
+
+%x-center {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+%y-center {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+%xy-center {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+/* CSS */
+html {
+    font-family: 'Pretendard-Regular';
+    font-size: 62.5%;
+}
+
+button {
+    font-family: 'Pretendard-Regular';
+}
+
+ul {
+    list-style: none;
+}
+
+.blind {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.container {
+    @include width;
+}
+
+.top-btn {
+    position: fixed;
+    display: none;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+
+    &__title {
+        display: block;
+        font-size: $font-14;
+        color: $main-white;
+    }
+}

@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+:root {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  cursor: default;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  tab-size: 4;
+}
+
+html, body {
+  height: 100%;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Font List */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Variables */
+/* Mixin */
+/* Extend */
+.footer__fnb, .footer__sns, .footer__top .container {
+  display: flex;
+  align-items: center;
+}
+
+.footer__fnb-itm:nth-child(n+2)::after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* CSS */
+html {
+  font-family: "Pretendard-Regular";
+  font-size: 62.5%;
+}
+
+button {
+  font-family: "Pretendard-Regular";
+}
+
+ul {
+  list-style: none;
+}
+
+.blind {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.top-btn {
+  position: fixed;
+  display: none;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+}
+.top-btn__title {
+  display: block;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.footer {
+  background: #ced2d6;
+}
+.footer__top {
+  border-bottom: 1px solid #74777a;
+}
+.footer__top .container {
+  justify-content: space-between;
+}
+@media (max-width: 576px) {
+  .footer__top .container {
+    padding: 0;
+  }
+}
+@media (max-width: 576px) {
+  .footer__sns {
+    display: none;
+  }
+}
+.footer__sns-itm {
+  margin-left: 10px;
+}
+.footer__sns-link {
+  display: block;
+}
+.footer__site {
+  position: relative;
+  margin-left: 20px;
+}
+@media (max-width: 576px) {
+  .footer__site {
+    width: 100%;
+    margin-left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.footer__site-btn {
+  position: relative;
+  padding: 12px 52px 12px 32px;
+  border: 1px solid #74777a;
+  background: #74777a;
+  color: #fff;
+  font-size: 1.6rem;
+}
+.footer__site-btn::after {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(-45deg);
+  content: "";
+}
+@media (max-width: 576px) {
+  .footer__site-btn {
+    width: 100%;
+  }
+}
+.footer__site-open::after {
+  top: 16px;
+  transform: rotate(135deg);
+}
+.footer__site-list {
+  position: absolute;
+  display: none;
+  bottom: 100%;
+  width: 100%;
+  border: 1px solid #74777a;
+  border-bottom: 0;
+  background: #fff;
+  height: 200px;
+  overflow-y: auto;
+}
+.footer__site-link {
+  font-size: 1.6rem;
+  display: block;
+  padding: 8px 0 8px 32px;
+}
+.footer__site-link:hover {
+  background: #2a629d;
+  color: #fff;
+}
+.footer__bot {
+  padding: 20px 0;
+}
+.footer__fnb {
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.footer__fnb-itm {
+  position: relative;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+.footer__fnb-itm:nth-child(n+2)::after {
+  position: absolute;
+  left: -10px;
+  width: 1px;
+  height: 12px;
+  background: #000;
+  content: "";
+}
+.footer__fnb-link {
+  display: block;
+  font-size: 1.6rem;
+}
+.footer__copy {
+  text-align: center;
+  font-size: 1.6rem;
+}/*# sourceMappingURL=footer.css.map */
